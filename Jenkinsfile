@@ -98,6 +98,10 @@ node {
             }
         }
 	}
+
+	stage('clear repo'){
+        sh "sudo rm -rf *"
+    }
 }
 
 void mavenInstall(dirPath,globalVersion) {

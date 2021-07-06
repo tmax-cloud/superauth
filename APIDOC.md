@@ -1,5 +1,5 @@
-# HyperAuth API Specification
-- HyperAuth에서 **확장 기능으로 제공하는 API 목록**
+# SuperAuth API Specification
+- SuperAuth에서 **확장 기능으로 제공하는 API 목록**
 - **Keycloak 공식 Admin REST API 문서**
   - https://www.keycloak.org/docs-api/5.0/rest-api/index.html 
 
@@ -96,7 +96,7 @@
  #### Get
    - **Description** 
      
-      <u>Hyperauth Admin 권한 or 'view-users'권한을 가진 유저 or 본인토큰으로</u> 사용자 정보를 조회하는 API
+      <u>Superauth Admin 권한 or 'view-users'권한을 가진 유저 or 본인토큰으로</u> 사용자 정보를 조회하는 API
       
   - **RequestURL**
 
@@ -125,7 +125,7 @@
   #### List
    - **Description** 
      
-      <u>Hyperauth Admin 권한 or 'view-users'권한을 가진 유저 토큰으로</u> 사용자 이메일 및 이름 list를 조회하는 API
+      <u>Superauth Admin 권한 or 'view-users'권한을 가진 유저 토큰으로</u> 사용자 이메일 및 이름 list를 조회하는 API
       
   - **RequestURL**
 
@@ -155,9 +155,9 @@
  #### AttributeUpdate
   - **Description** 
     
-    <u>Hyperauth Admin 권한 or 유저 본인 토큰</u> 사용자 정보를 수정하는 API
+    <u>Superauth Admin 권한 or 유저 본인 토큰</u> 사용자 정보를 수정하는 API
     
-    <u>Hyperauth Admin 권한 or 유저 본인 토큰</u> 탈퇴를 신청 (겸)
+    <u>Superauth Admin 권한 or 유저 본인 토큰</u> 탈퇴를 신청 (겸)
        - withdrawal_unqualified_{client_name} : t  
       attribute을 가진 유저는 탈퇴 신청을 할 수 없음 ex) withdrawal_unqualified_hypercloud : t 
     
@@ -234,7 +234,7 @@
 #### List
    - **Description** 
      
-      <u>Hyperauth Admin 권한 or 'view-users'권한을 가진 유저 토큰으로</u> client 관리자가 그룹 리스트를 조회하는 API
+      <u>Superauth Admin 권한 or 'view-users'권한을 가진 유저 토큰으로</u> client 관리자가 그룹 리스트를 조회하는 API
       
   - **RequestURL**
 
@@ -248,7 +248,7 @@
        token : {AccessToken}
        startsWith : {startsString}  ( 시작단어를 통한 검색기능 지원 )
        except : **{StringArray}**  ( 검색에서 제외할 username 입력 )
-       exceptDefault: true / false ( hyperauth의 default group은 제외하고 검색할지 말지 선택 )
+       exceptDefault: true / false ( superauth의 default group은 제외하고 검색할지 말지 선택 )
        ex ) startsWith=a&except=aaa&except=adminGroup&exceptDefault=true
 
   - **PathParam**
@@ -439,7 +439,7 @@
 
     - **Description** 
 
-      <u>Hyperauth Admin 권한으로</u> Client의 Agreement를 추가/수정하는 API
+      <u>Superauth Admin 권한으로</u> Client의 Agreement를 추가/수정하는 API
 
       같은 client/version의 Ageement를 삭제 후, 생성
 
@@ -477,7 +477,7 @@
 
   - **Description** 
     
-    <u>Hyperauth Admin 권한으로</u> 특정 client의 약관을 삭제하는 API
+    <u>Superauth Admin 권한으로</u> 특정 client의 약관을 삭제하는 API
     
   - **RequestURL**
 
@@ -732,7 +732,7 @@
  #### Get
   - **Description** 
 
-      <u>Hyperauth Version Get API
+      <u>Superauth Version Get API
 
   - **RequestURL**
     
@@ -751,7 +751,7 @@
  #### Get
   - **Description** 
 
-      <u>Hyperauth Metrics Get API for Prometheus
+      <u>Superauth Metrics Get API for Prometheus
 
   - **RequestURL**
     

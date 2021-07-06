@@ -23,11 +23,11 @@ ADD build/postgresql/module.xml /opt/jboss/keycloak/modules/system/layers/keyclo
 # 2. Update stanalone.xml & domain.xml
 ADD build/config/docker-entrypoint.sh /opt/jboss/tools/docker-entrypoint.sh
 
-# 3. add tmax theme & hypercloud/login & hyperspace/login & hyperauth & cnu
+# 3. add tmax theme & hypercloud/login & hyperspace/login & superauth & cnu
 COPY themes/tmax /opt/jboss/keycloak/themes/tmax
 COPY themes/hypercloud/login /opt/jboss/keycloak/themes/hypercloud/login
 COPY themes/hyperspace/login /opt/jboss/keycloak/themes/hyperspace/login
-COPY themes/hyperauth /opt/jboss/keycloak/themes/hyperauth
+COPY themes/superauth /opt/jboss/keycloak/themes/superauth
 COPY themes/cnu /opt/jboss/keycloak/themes/CNU
 
 # 4. keycloak service jar & sql jar & server-spi-private jar change for tibero, this contains sql error fixme!!
@@ -38,8 +38,8 @@ ADD build/jar/keycloak-model-jpa-11.0.2.jar /opt/jboss/keycloak/modules/system/l
 RUN rm /opt/jboss/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi-private/main/keycloak-server-spi-private-11.0.2.jar
 ADD build/jar/keycloak-server-spi-private-11.0.2.jar /opt/jboss/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi-private/main/keycloak-server-spi-private-11.0.2.jar
 
-# 5. hyperauth-spi.jar (SPI)
-ADD target/keycloak-spi-jar-with-dependencies.jar /opt/jboss/keycloak/standalone/deployments/hyperauth-spi.jar
+# 5. superauth-spi.jar (SPI)
+ADD target/keycloak-spi-jar-with-dependencies.jar /opt/jboss/keycloak/standalone/deployments/superauth-spi.jar
 
 # 6. Naver & Kakao html
 ADD build/config/realm-identity-provider-naver.html /opt/jboss/keycloak/themes/base/admin/resources/partials/realm-identity-provider-naver.html
@@ -60,13 +60,13 @@ COPY build/config/TmaxOneAccount_Service_Policy_210401.pdf /opt/jboss/keycloak/w
 
 # 8. For Log to File
 USER root
-RUN mkdir -p /opt/jboss/keycloak/standalone/log/hyperauth
+RUN mkdir -p /opt/jboss/keycloak/standalone/log/superauth
 RUN mkdir -p /opt/jboss/startup-scripts
 ADD build/config/jboss.cli /opt/jboss/startup-scripts/jboss.cli
 
 # 9. Vesion Env for version API
-ARG HYPERAUTH_VERSION
-ENV HYPERAUTH_VERSION $HYPERAUTH_VERSION
+ARG SUPERAUTH_VERSION
+ENV SUPERAUTH_VERSION $SUPERAUTH_VERSION
 
 
 

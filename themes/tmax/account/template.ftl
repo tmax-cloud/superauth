@@ -118,8 +118,8 @@
             <#nested "content">
         </div>
     </div>
-    <#if properties.scripts_template_hyperauth?has_content>
-        <#list properties.scripts_template_hyperauth?split(' ') as script>
+    <#if properties.scripts_template_superauth?has_content>
+        <#list properties.scripts_template_superauth?split(' ') as script>
             <script type="text/javascript" src="${url.resourcesPath}/${script}"></script>
         </#list>
     </#if>

@@ -24,7 +24,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.tmax.hyperauth</groupId>
+            <groupId>com.tmax.superauth</groupId>
             <artifactId>server-spi-private</artifactId>
             <version>11.0.2</version>
         </dependency>

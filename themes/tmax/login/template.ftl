@@ -24,9 +24,9 @@
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
-<#--    hyperauth 로그인 테마에 css 를 변경할 일이 생길 경우 활성화 지금은 큰 수정없어서 주석처리-->
-<#--    <#if properties.styles_template_hyperauth?has_content>-->
-<#--        <#list properties.styles_template_hyperauth?split(' ') as style>-->
+<#--    superauth 로그인 테마에 css 를 변경할 일이 생길 경우 활성화 지금은 큰 수정없어서 주석처리-->
+<#--    <#if properties.styles_template_superauth?has_content>-->
+<#--        <#list properties.styles_template_superauth?split(' ') as style>-->
 <#--            <link href="${url.resourcesPath}/${style}" rel="stylesheet" />-->
 <#--        </#list>-->
 <#--    </#if>-->
@@ -204,7 +204,7 @@
             </div>
         </#if>
         </div>  -->
-        <#if !(url.selectedTheme == 'hyperauth' || url.selectedTheme == 'CNU')>
+        <#if !(url.selectedTheme == 'superauth' || url.selectedTheme == 'CNU')>
             <div class="footer-terms-link-wrapper">
                 <a href="/term/TmaxOneAccount_Service_Policy.pdf">이용약관</a>
                 <span style="width: 1px; height: 1rem; display: inline-block; background-color: grey; margin: auto 2px;"></span>

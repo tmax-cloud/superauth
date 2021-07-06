@@ -62,7 +62,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg by (realm)(hyperauth_users)",
+          "expr": "avg by (realm)(superauth_users)",
           "intervalFactor": 1,
           "legendFormat": "{{realm}}",
           "refId": "A"
@@ -72,7 +72,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Hyperauth Users per Realm",
+      "title": "Superauth Users per Realm",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -154,7 +154,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg by (realm)(hyperauth_user_sessions)",
+          "expr": "avg by (realm)(superauth_user_sessions)",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -251,7 +251,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg by (realm,client_id)(hyperauth_user_sessions)",
+          "expr": "avg by (realm,client_id)(superauth_user_sessions)",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -347,7 +347,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (realm,mailServer)(increase(hyperauth_mail_request[1h]))",
+          "expr": "sum by (realm,mailServer)(increase(superauth_mail_request[1h]))",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -443,7 +443,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (realm, mailServer)(increase(hyperauth_mail_send[1h]))",
+          "expr": "sum by (realm, mailServer)(increase(superauth_mail_send[1h]))",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -539,7 +539,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (realm, mailServer)(increase(hyperauth_failed_mail_send[1h]))",
+          "expr": "sum by (realm, mailServer)(increase(superauth_failed_mail_send[1h]))",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -798,7 +798,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(jvm_memory_bytes_max{instance=\"$instance\",job=\"hyperauth\"})",
+          "expr": "sum(jvm_memory_bytes_max{instance=\"$instance\",job=\"superauth\"})",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -807,14 +807,14 @@
           "refId": "A"
         },
         {
-          "expr": "sum(jvm_memory_bytes_committed{instance=\"$instance\",job=\"hyperauth\"})",
+          "expr": "sum(jvm_memory_bytes_committed{instance=\"$instance\",job=\"superauth\"})",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "Comitted",
           "refId": "C"
         },
         {
-          "expr": "sum(jvm_memory_bytes_used{instance=\"$instance\",job=\"hyperauth\"})",
+          "expr": "sum(jvm_memory_bytes_used{instance=\"$instance\",job=\"superauth\"})",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -905,7 +905,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (client_id) (increase(hyperauth_login_attempts{realm=\"tmax\",job=\"hyperauth\"}[1h]))",
+          "expr": "sum by (client_id) (increase(superauth_login_attempts{realm=\"tmax\",job=\"superauth\"}[1h]))",
           "legendFormat": "{{client_id}}",
           "refId": "A"
         }
@@ -996,7 +996,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (realm)(increase(hyperauth_logins[1h]))",
+          "expr": "sum by (realm)(increase(superauth_logins[1h]))",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1094,7 +1094,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (error)(increase(hyperauth_failed_login_attempts{realm=\"tmax\",job=\"hyperauth\"}[1h]))",
+          "expr": "sum by (error)(increase(superauth_failed_login_attempts{realm=\"tmax\",job=\"superauth\"}[1h]))",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -1191,7 +1191,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (client_id)(increase(hyperauth_logins{realm=\"tmax\",job=\"hyperauth\"}[1h]))",
+          "expr": "sum by (client_id)(increase(superauth_logins{realm=\"tmax\",job=\"superauth\"}[1h]))",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -1288,7 +1288,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (client_id, realm) (hyperauth_registrations{job=\"hyperauth\"})",
+          "expr": "sum by (client_id, realm) (superauth_registrations{job=\"superauth\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1385,7 +1385,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (client_id, realm) (hyperauth_registrations_errors{job=\"hyperauth\"})",
+          "expr": "sum by (client_id, realm) (superauth_registrations_errors{job=\"superauth\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1451,14 +1451,14 @@
           "value": "10.244.76.249:8080"
         },
         "datasource": "prometheus",
-        "definition": "label_values(hyperauth_users,instance)",
+        "definition": "label_values(superauth_users,instance)",
         "hide": 0,
         "includeAll": false,
         "label": "Instance",
         "multi": false,
         "name": "instance",
         "options": [],
-        "query": "label_values(hyperauth_users,instance)",
+        "query": "label_values(superauth_users,instance)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1476,14 +1476,14 @@
           "value": "tmax"
         },
         "datasource": "prometheus",
-        "definition": "label_values(hyperauth_users{instance=\"$instance\"},realm)",
+        "definition": "label_values(superauth_users{instance=\"$instance\"},realm)",
         "hide": 0,
         "includeAll": false,
         "label": "Realm",
         "multi": false,
         "name": "realm",
         "options": [],
-        "query": "label_values(hyperauth_users{instance=\"$instance\"},realm)",
+        "query": "label_values(superauth_users{instance=\"$instance\"},realm)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1501,14 +1501,14 @@
           "value": "hypercloud4"
         },
         "datasource": "prometheus",
-        "definition": "label_values(hyperauth_logins{instance=\"$instance\",realm=\"$realm\"},client_id)",
+        "definition": "label_values(superauth_logins{instance=\"$instance\",realm=\"$realm\"},client_id)",
         "hide": 0,
         "includeAll": false,
         "label": "ClientId",
         "multi": false,
         "name": "ClientId",
         "options": [],
-        "query": "label_values(hyperauth_logins{instance=\"$instance\",realm=\"$realm\"},client_id)",
+        "query": "label_values(superauth_logins{instance=\"$instance\",realm=\"$realm\"},client_id)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1552,7 +1552,7 @@
     ]
   },
   "timezone": "",
-  "title": "hyperauth Metrics",
+  "title": "superauth Metrics",
   "uid": "keycloak",
   "version": 67
 }

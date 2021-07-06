@@ -56,7 +56,7 @@
                         <div class="welcome-img"></div>
                     </#if>
                     <p id="welcome-instruction">
-                        ${msg("finishIdpUserVerificationMessage1", identityProviderVendor, hyperauthUserName)?no_esc}
+                        ${msg("finishIdpUserVerificationMessage1", identityProviderVendor, superauthUserName)?no_esc}
                         ${msg("finishIdpUserVerificationMessage2", identityProviderVendor, identityProviderUserName)?no_esc}
                     </p>
                 </div>

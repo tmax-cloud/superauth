@@ -292,12 +292,12 @@
         </div>
         <script type="text/javascript" src="${url.resourcesPath}/js/axios.min.js"></script>
         <script type="text/javascript" src="${url.resourcesPath}/js/register.js"></script>
-        <#if properties.scripts_register_hyperauth?has_content>
-            <#list properties.scripts_register_hyperauth?split(' ') as script>
+        <#if properties.scripts_register_superauth?has_content>
+            <#list properties.scripts_register_superauth?split(' ') as script>
                 <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
             </#list>
         </#if>
-        <#if !(url.selectedTheme == 'hyperauth' || url.selectedTheme == 'CNU')>
+        <#if !(url.selectedTheme == 'superauth' || url.selectedTheme == 'CNU')>
             <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
                 <script>getTerms("${(locale.currentLanguageTag!'ko')}");</script>
             <#else>

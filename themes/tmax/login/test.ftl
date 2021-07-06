@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Welcome to HyperAuth</title>
+    <title>Welcome to SuperAuth</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
       <div class="welcome-header">
-        <h1>Welcome to <strong>HyperAuth</strong></h1>
+        <h1>Welcome to <strong>SuperAuth</strong></h1>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-4">

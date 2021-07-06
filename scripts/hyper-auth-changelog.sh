@@ -25,12 +25,12 @@ echo "!!!make changelog for $version"
 echo "!!!prev version: $prev_version"
 
 # gen file
-echo "# HyperAuthServer changelog!!" > $output
+echo "# SuperAuthServer changelog!!" > $output
 echo "All notable changes to this project will be documented in this file." >> $output
 
 # make commit log to changelog
 echo -e "\n<!-------------------- v$version start -------------------->" >> $output
-echo -e "\n## HyperAuthServer $version ($timestamp)" >> $output
+echo -e "\n## SuperAuthServer $version ($timestamp)" >> $output
 
 # make commit log to changelog
 echo -e "\n### Added" >> $output

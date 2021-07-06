@@ -213,8 +213,8 @@
     </#if>
     <script type="text/javascript" src="${url.resourcesPath}/js/axios.min.js"></script>
     <script type="text/javascript" src="${url.resourcesPath}/js/identity-provider.js"></script>
-    <#if properties.scripts_identity_provider_hyperauth?has_content>
-        <#list properties.scripts_identity_provider_hyperauth?split(' ') as script>
+    <#if properties.scripts_identity_provider_superauth?has_content>
+        <#list properties.scripts_identity_provider_superauth?split(' ') as script>
             <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
         </#list>
     </#if>

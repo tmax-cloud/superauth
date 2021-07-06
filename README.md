@@ -1,13 +1,13 @@
-# HyperAuth
+# SuperAuth
 - **설치 가이드**
-  - https://github.com/tmax-cloud/install-hyperauth
+  - https://github.com/tmax-cloud/install-superauth
     - kafka cluster topic server 추가 설치의 경우, Step 4. Kafka Topic Server 설치 만 추가 수행하면 됨
    
 - **운영 및 기능 가이드**  
   - Events Config 관리 
     - 원하는 기능만 사용할 수 있게끔 Plug-In 형식으로 사용 가능
   ![image](https://user-images.githubusercontent.com/61040426/122870463-a9936200-d368-11eb-87c1-e331848078d2.png)
-    - hyperauth_event_listener : Realm 에서 발생하는 Event 로그 수집, Tmax 정책에 따른 여러 기능 수행
+    - superauth_event_listener : Realm 에서 발생하는 Event 로그 수집, Tmax 정책에 따른 여러 기능 수행
       - hypercloud4 관련 API Call ( 삭제 예정 ) 
       - Client의 유저당 세션을 1개로 유지 하는 기능
       - 회원가입 후 10분안에 메일 인증을 안 할시 유저 삭제
@@ -15,31 +15,31 @@
     - kafka_producer : Realm의 Event를 Kafka로 Publish 한다.
     - Prometheus_metric_listener(개발중) : Realm의 Event를 Prometheus Metric의 형태로 ( auth/realm/{realmId}/metrics ) 노출
       - Prometheus 설치를 통해 수집 가능 ( ServiceMonitor 추가 필요 ) 
-      - 수집 Metric 정보 : https://github.com/tmax-cloud/hyperauth/blob/main/METRICS.md 참조
-    - Grafana Hyperauth Metrics Json
-      - https://github.com/tmax-cloud/install-hyperauth/blob/main/manifest/hyperauth_metric.json   
+      - 수집 Metric 정보 : https://github.com/tmax-cloud/superauth/blob/main/METRICS.md 참조
+    - Grafana Superauth Metrics Json
+      - https://github.com/tmax-cloud/install-superauth/blob/main/manifest/superauth_metric.json   
       - ![image](https://user-images.githubusercontent.com/61040426/123621787-8bd16b80-d846-11eb-946e-aee0f8884717.png)
-  - Hyperauth 서버 이중화 및 세션 클러스터링 적용
+  - Superauth 서버 이중화 및 세션 클러스터링 적용
     - Protocol : KUBE_PING
     - 참고 : https://github.com/jgroups-extras/jgroups-kubernetes/blob/master/README.adoc
-    - 설치 변경 : https://github.com/tmax-cloud/install-hyperauth/blob/main/manifest/2.hyperauth_deployment.yaml 
+    - 설치 변경 : https://github.com/tmax-cloud/install-superauth/blob/main/manifest/2.superauth_deployment.yaml 
       - replica : 2
       - 이중화 관련 Env 추가
     - **LOG 수집 가이드**
-      - 주의 :  hyperauth 이미지 tmaxcloudck/hyperauth:b1.1.0.15부터 적용
-        - 설치 yaml 중 2.hyperauth_deployment.yaml에서 args: ["-c standalone.xml", "-Dkeycloak.profile.feature.docker=enabled -b 0.0.0.0"] 부분 추가해야 사용가능
-      - kubectl exec -it -n hyperauth $(kubectl get pod -n hyperauth | grep hyperauth | cut -d ' ' -f1 | awk 'NR == 1 { print $0; exit }') bash
-      - cd /opt/jboss/keycloak/standalone/log/hyperauth
-      - {hyperauth_pod_name}.log 로 실시간 로그가 적재된다.
-      - {hyperauth_pod_name}.log.2021-04-21 등으로 하루에 하나씩 로그가 저장된다.
-      - hyperauth pod 내부에서 /opt/jboss/keycloak/bin/jboss-cli.sh 를 사용하여서 실시간 로그 설정 변경도 가능하다.
-        - 참조 : https://github.com/tmax-cloud/hyperauth/blob/main/guide/rotational_file_log_command
+      - 주의 :  superauth 이미지 tmaxcloudck/superauth:b1.1.0.15부터 적용
+        - 설치 yaml 중 2.superauth_deployment.yaml에서 args: ["-c standalone.xml", "-Dkeycloak.profile.feature.docker=enabled -b 0.0.0.0"] 부분 추가해야 사용가능
+      - kubectl exec -it -n superauth $(kubectl get pod -n superauth | grep superauth | cut -d ' ' -f1 | awk 'NR == 1 { print $0; exit }') bash
+      - cd /opt/jboss/keycloak/standalone/log/superauth
+      - {superauth_pod_name}.log 로 실시간 로그가 적재된다.
+      - {superauth_pod_name}.log.2021-04-21 등으로 하루에 하나씩 로그가 저장된다.
+      - superauth pod 내부에서 /opt/jboss/keycloak/bin/jboss-cli.sh 를 사용하여서 실시간 로그 설정 변경도 가능하다.
+        - 참조 : https://github.com/tmax-cloud/superauth/blob/main/guide/rotational_file_log_command
   - **Topic Consumer가이드**
     - [TopicConsumerExample.java](src/main/java/com/tmax/superauth/eventlistener/kafka/consumer/EventConsumer.java)
       - TODO 부분 수행 
         - Keystore, Truststore 발급, Secret 생성 및 volume mount
         - Password Secret을 이용해서 변수 처리
-        - GROUP_ID_CONFIG를 각 hyperauth client name으로 수정
+        - GROUP_ID_CONFIG를 각 superauth client name으로 수정
           - group id 별로 topic에 쌓인 데이터를 읽어가는 위치를 나타내는 offset이 달라짐
           - 2 consumer가 한 group id를 공유할 경우, 데이터를 처리하지 못하는 경우 발생
       - Topic Event 객체 (Json)
@@ -58,7 +58,7 @@
     - 현재 Topic Event Data 보관 기간 : 7일
   
   - **Fido 기반 생체 인증 기능 사용 가이드**
-    - [hyperauth_fido_guide.pptx](https://github.com/tmax-cloud/hyperauth/blob/main/guide/hyperauth_fido_guide.pptx)   
+    - [superauth_fido_guide.pptx](https://github.com/tmax-cloud/superauth/blob/main/guide/superauth_fido_guide.pptx)   
     
   - **비밀번호 변경 3개월 경과시 비밀번호 변경 유도 기능 사용 가이드**
     - Authentication - Bindings - Brower Flow : **Browser With PasswordUpdateAlert** 선택
@@ -94,14 +94,14 @@
 - **이미지 정보**
 
   ```sh
-  docker pull tmaxcloudck/hyperauth:latest
+  docker pull tmaxcloudck/superauth:latest
   ```
 
   - Base Image
     - Keycloak 10.0.2  :  b1.0.0.0 ~ b1.0.9.29
     - Keycloak 11.0.2  :  b1.0.10.0 ~ latest
   - TmaxRealm.json
-    - https://github.com/tmax-cloud/install-hyperauth/blob/main/manifest/3.tmax-realm-export.json
+    - https://github.com/tmax-cloud/install-superauth/blob/main/manifest/3.tmax-realm-export.json
     
 - **정책**
   - User Attribute Key-Value 값 (공통 및 고정)
@@ -130,7 +130,7 @@
         - withdrawal_unqualified_{client_name} : t
           - ex) withdrawal_unqualified_wapl : t   
     - AGREEMENT
-      - Hyperauth(공통)의 선택 약관
+      - Superauth(공통)의 선택 약관
         - agreeMailOpt : true / false
       - Client별 최초 로그인시 약관
         - agree_ischecked_{ClientName} : true 
@@ -164,7 +164,7 @@
 - **Client 별 약관 CRUD 기능**
 
 - `네이버로 로그인, 카카오로 로그인` (Alpha)
-  - 카카오로 로그인 가이드 : [kakako_login_guide](https://github.com/tmax-cloud/hyperauth/blob/main/guide/kakako_login_guide.pptx)
+  - 카카오로 로그인 가이드 : [kakako_login_guide](https://github.com/tmax-cloud/superauth/blob/main/guide/kakako_login_guide.pptx)
 - `회원가입 시, 핸드폰 번호 인증 기능` (Alpha)
 - **회원 탈퇴 신청 기능**
   - 탈퇴 신청 후, 사용자 데이터 30일 유지
@@ -185,7 +185,7 @@
   - 그룹 관리자는 그룹에 속해 있어야 하고, attribute으로 isAdmin : {groupName} 을 가지고 있어야 한다.
   - 그룹 하위 사용자들에 대한 CRU 기능
   - 기 사용자를 그룹에 초대하는 기능
-  - 그룹에 대한 생성, 그룹 관리자로 승격은 HyperAuth 관리자가 직접 제어
+  - 그룹에 대한 생성, 그룹 관리자로 승격은 SuperAuth 관리자가 직접 제어
 - **사용자 비밀번호 관련 기능**
   - 사용자가 자신의 비밀번호 변경 기능 (자신의 Token 필요)
   - 비밀번호 찾기 기능 (인증 코드를 Email으로 발송)

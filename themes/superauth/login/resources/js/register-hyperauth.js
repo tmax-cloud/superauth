@@ -1,4 +1,4 @@
-//hyperauth theme do not have agreement page
+//superauth theme do not have agreement page
 const step1 = document.getElementById("step1");
 const step2 = document.getElementById("step2");
 step1.style.display = "none";

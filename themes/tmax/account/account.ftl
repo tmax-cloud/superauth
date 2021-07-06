@@ -345,8 +345,8 @@
 
 <script type="text/javascript" src="${url.resourcesPath}/js/axios.min.js"></script>
 <script type="text/javascript" src="${url.resourcesPath}/js/account.js"></script>
-<#if properties.scripts_account_hyperauth?has_content>
-    <#list properties.scripts_account_hyperauth?split(' ') as script>
+<#if properties.scripts_account_superauth?has_content>
+    <#list properties.scripts_account_superauth?split(' ') as script>
         <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
     </#list>
 </#if>

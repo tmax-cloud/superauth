@@ -6,11 +6,11 @@
         <version>11.0.2</version>
     </parent>
 
-    <name>keycloak-spi</name>
+    <name>superauth</name>
     <description/>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>keycloak-spi</artifactId>
+    <artifactId>superauth</artifactId>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>

@@ -3,7 +3,6 @@ node {
     def gitSuperAuthAddress = "${gitHubBaseAddress}/tmax-cloud/superauth.git"
 	def buildDir = "/var/lib/jenkins/workspace/superauth"
 	def imageBuildHome = "${buildDir}/build"
-	def themeHome = "${buildDir}/themes"
 	def scriptHome = "${buildDir}/scripts"
 	def version = "${params.majorVersion}.${params.minorVersion}.${params.tinyVersion}.${params.hotfixVersion}"
 	def preVersion = "${params.preVersion}"
@@ -39,7 +38,6 @@ node {
     	mavenInstall("${buildDir}", "${globalVersion}")
         sh "sudo cp -r target/keycloak-spi-jar-with-dependencies.jar ${imageBuildHome}/hyperauth-spi.jar"
         if(type == 'distribution') {
-            sh "sudo sh ${scriptHome}/hyper-auth-changelog.sh ${version} ${preVersion}"
             sh "git checkout ${params.buildBranch}"
 
             sh "git config --global user.name ${githubUserName}"
@@ -47,7 +45,7 @@ node {
             sh "git config --global credential.helper store"
             sh "git add -A"
 
-            sh (script:'git commit -m "[SPI] Hyper Auth Server- ${version} " || true')
+            sh (script:'git commit -m "[BUILD] Super Auth- ${version} " || true')
             sh "git tag v${version}"
 
             sh "sudo git push -u origin +${params.buildBranch}"

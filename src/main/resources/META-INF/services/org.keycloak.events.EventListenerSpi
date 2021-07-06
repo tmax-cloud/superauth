@@ -1,1 +1,1 @@
-com.tmax.hyperauth.eventlistener.prometheus.MetricsEventListenerSpi
+com.tmax.superauth.eventlistener.prometheus.MetricsEventListenerSpi

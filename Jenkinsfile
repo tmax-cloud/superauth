@@ -17,7 +17,7 @@ node {
         url: "http://${gitSuperAuthAddress}"
     	
     	sh "git checkout ${params.buildBranch}"
-		sh "git config --global user.name ${userName}"
+		sh "git config --global user.name ${githubUserName}"
 		sh "git config --global user.email ${userEmail}"
 		sh "git config --global credential.helper store"
     

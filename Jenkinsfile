@@ -33,27 +33,7 @@ node {
             sh "mvn install:install-file -Dfile=lib/com/tmax/tibero/jdbc/6.0/tibero6-jdbc.jar -DgroupId=com.tmax.tibero -DartifactId=jdbc -Dversion=6.0 -Dpackaging=jar -DgeneratePom=true"
             sh "mvn install:install-file -Dfile=lib/com/tmax/hyperauth/server-spi-private/11.0.2/keycloak-server-spi-private-11.0.2.jar -DgroupId=com.tmax.hyperauth -DartifactId=server-spi-private -Dversion=11.0.2 -Dpackaging=jar -DgeneratePom=true"
         }
-
     	mavenInstall("${buildDir}", "${globalVersion}")
-        if(type == 'distribution') {
-            sh "git checkout ${params.buildBranch}"
-
-            sh "git config --global user.name ${githubUserName}"
-            sh "git config --global user.email ${userEmail}"
-            sh "git config --global credential.helper store"
-            sh "git add -A"
-
-            sh (script:'git commit -m "[BUILD] Super Auth- ${version} " || true')
-            sh "git tag v${version}"
-
-            sh "sudo git push -u origin +${params.buildBranch}"
-            sh "sudo git push origin v${version}"
-
-            sh "git fetch --all"
-            sh "git reset --hard origin/${params.buildBranch}"
-            sh "git pull origin ${params.buildBranch}"
-        }
-
     }
 
     stage('image build & push'){

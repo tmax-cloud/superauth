@@ -19,7 +19,7 @@
 
   - **RequestURL**
     
-    POST https://{HYPERAUTH_IP}/auth/realms/tmax/user
+    POST https://{SUPERAUTH_IP}/auth/realms/tmax/user
     
   - **RequestHeader**
     
@@ -71,7 +71,7 @@
 
   - **RequestURL**
 
-    DELETE https://{HYPERAUTH_IP}/auth/realms/tmax/user/{userName}
+    DELETE https://{SUPERAUTH_IP}/auth/realms/tmax/user/{userName}
 
   - **RequestHeader**
 
@@ -100,7 +100,7 @@
       
   - **RequestURL**
 
-       GET https://{HYPERAUTH_IP}/auth/realms/tmax/user/{userName}
+       GET https://{SUPERAUTH_IP}/auth/realms/tmax/user/{userName}
 
   - **RequestHeader**
 
@@ -129,7 +129,7 @@
       
   - **RequestURL**
 
-       GET https://{HYPERAUTH_IP}/auth/realms/tmax/user/list
+       GET https://{SUPERAUTH_IP}/auth/realms/tmax/user/list
 
   - **RequestHeader**
 
@@ -163,7 +163,7 @@
     
   - **RequestURL**
 
-      PUT https://{HYPERAUTH_IP}/auth/realms/tmax/user/{userName}
+      PUT https://{SUPERAUTH_IP}/auth/realms/tmax/user/{userName}
 
   - **RequestHeader**
 
@@ -207,7 +207,7 @@
     
   - **RequestURL**
 
-      GET https://{HYPERAUTH_IP}/auth/realms/tmax/user/{userName}/exists
+      GET https://{SUPERAUTH_IP}/auth/realms/tmax/user/{userName}/exists
 
   - **RequestHeader**
 
@@ -238,7 +238,7 @@
       
   - **RequestURL**
 
-       GET https://{HYPERAUTH_IP}/auth/realms/tmax/group/list
+       GET https://{SUPERAUTH_IP}/auth/realms/tmax/group/list
 
   - **RequestHeader**
 
@@ -295,7 +295,7 @@
 
   - **RequestURL**
 
-    POST https://{HYPERAUTH_IP}/auth/realms/tmax/groupMember
+    POST https://{SUPERAUTH_IP}/auth/realms/tmax/groupMember
 
   - **RequestHeader**
 
@@ -366,7 +366,7 @@
     
   - **RequestURL**
 
-    GET https://{HYPERAUTH_IP}/auth/realms/tmax/groupMember/{groupName}
+    GET https://{SUPERAUTH_IP}/auth/realms/tmax/groupMember/{groupName}
 
   - **RequestHeader**
 
@@ -395,7 +395,7 @@
     
   - **RequestURL**
 
-    PUT https://{HYPERAUTH_IP}/auth/realms/tmax/groupMember/{groupName}
+    PUT https://{SUPERAUTH_IP}/auth/realms/tmax/groupMember/{groupName}
 
   - **RequestHeader**
 
@@ -445,7 +445,7 @@
 
     - **RequestURL**
 
-      POST https://{HYPERAUTH_IP}/auth/realms/tmax/agreement
+      POST https://{SUPERAUTH_IP}/auth/realms/tmax/agreement
 
     - **RequestHeader**
 
@@ -481,7 +481,7 @@
     
   - **RequestURL**
 
-    DELETE https://{HYPERAUTH_IP}/auth/realms/tmax/agreement/{clientName}
+    DELETE https://{SUPERAUTH_IP}/auth/realms/tmax/agreement/{clientName}
 
   - **RequestHeader**
 
@@ -509,7 +509,7 @@
     
   - **RequestURL**
 
-    GET https://{HYPERAUTH_IP}/auth/realms/tmax/agreement/{clientName}
+    GET https://{SUPERAUTH_IP}/auth/realms/tmax/agreement/{clientName}
 
   - **RequestHeader**
 
@@ -539,7 +539,7 @@
     
   - **RequestURL**
 
-    GET https://{HYPERAUTH_IP}/auth/realms/tmax/protocol/openid-connect/certs
+    GET https://{SUPERAUTH_IP}/auth/realms/tmax/protocol/openid-connect/certs
 
   - **RequestHeader**
 
@@ -567,7 +567,7 @@
 
   - **RequestURL**
 
-    POST https://{HYPERAUTH_IP}/auth/realms/tmax/email/{email_adress}
+    POST https://{SUPERAUTH_IP}/auth/realms/tmax/email/{email_adress}
 
   - **RequestHeader**
 
@@ -595,7 +595,7 @@
     
   - **RequestURL**
 
-    GET https://{HYPERAUTH_IP}/auth/realms/tmax/email/{email_address}
+    GET https://{SUPERAUTH_IP}/auth/realms/tmax/email/{email_address}
 
   - **RequestHeader**
 
@@ -623,7 +623,7 @@
     
   - **RequestURL**
 
-    PUT https://{HYPERAUTH_IP}/auth/realms/tmax/password
+    PUT https://{SUPERAUTH_IP}/auth/realms/tmax/password
 
   - **RequestHeader**
 
@@ -657,7 +657,7 @@
 
   - **RequestURL**
 
-    PUT https://{HYPERAUTH_IP}/auth/realms/tmax/password
+    PUT https://{SUPERAUTH_IP}/auth/realms/tmax/password
 
   - **RequestHeader**
 
@@ -688,7 +688,7 @@
 
   - **RequestURL**
 
-    PATCH https://{HYPERAUTH_IP}/auth/realms/tmax/password
+    PATCH https://{SUPERAUTH_IP}/auth/realms/tmax/password
 
   - **RequestHeader**
 
@@ -717,7 +717,7 @@
 
   - **RequestURL**
     
-    GET https://{HYPERAUTH_IP}/auth/realms/tmax/session
+    GET https://{SUPERAUTH_IP}/auth/realms/tmax/session
 
   - **PathParam**
 
@@ -736,7 +736,7 @@
 
   - **RequestURL**
     
-    GET https://{HYPERAUTH_IP}/auth/realms/tmax/version
+    GET https://{SUPERAUTH_IP}/auth/realms/tmax/version
 
   - **PathParam**
 
@@ -755,7 +755,7 @@
 
   - **RequestURL**
     
-    GET https://{HYPERAUTH_IP}/auth/realms/tmax/metrics
+    GET https://{SUPERAUTH_IP}/auth/realms/tmax/metrics
         
   - **RequestHeader**
 

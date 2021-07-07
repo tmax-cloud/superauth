@@ -1,6 +1,25 @@
 # SuperAuthServer changelog!!
 All notable changes to this project will be documented in this file.
 
+<!-------------------- v1.1.1.16 start -------------------->
+
+## SuperAuthServer 1.1.1.16 (2021. 07. 07. (수) 12:28:23 KST)
+
+### Added
+
+### Changed
+  - [mod] superauth 로고 변경 by dnxorjs1
+  - [mod] theme 및 기타 파일 superauth로 이름 변경 by dnxorjs1
+  - [mod] hyperauth --> superauth 관련 모든 네이밍 변경 by dnxorjs1
+
+### Fixed
+
+### CRD yaml
+
+### Etc
+
+<!--------------------- v1.1.1.16 end --------------------->
+
 <!-------------------- v1.1.1.15 start -------------------->
 
 ## SuperAuthServer 1.1.1.15 (2021. 07. 06. (화) 17:56:52 KST)

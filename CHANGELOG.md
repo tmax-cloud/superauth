@@ -1,6 +1,22 @@
 # SuperAuthServer changelog!!
 All notable changes to this project will be documented in this file.
 
+<!-------------------- v1.1.1.18 start -------------------->
+
+## SuperAuthServer 1.1.1.18 (2021. 07. 07. (수) 15:39:51 KST)
+
+### Added
+
+### Changed
+
+### Fixed
+
+### CRD yaml
+
+### Etc
+
+<!--------------------- v1.1.1.18 end --------------------->
+
 <!-------------------- v1.1.1.17 start -------------------->
 
 ## SuperAuthServer 1.1.1.17 (2021. 07. 07. (수) 15:35:38 KST)

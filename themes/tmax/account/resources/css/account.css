@@ -1154,7 +1154,7 @@ hr {
   text-align: center;
   font-size: 16px;
 }
-#success-text div,
+#success-text .contact-box,
 #failure-text div {
   width: 380px;
   height: 73px;

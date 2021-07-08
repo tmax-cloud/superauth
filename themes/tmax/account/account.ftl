@@ -274,7 +274,7 @@
             <h3>${msg("withdrawalSucess_body2")}</h3>
             <h3>${msg("withdrawalSucess_body3")}</h3>
             <div class="contact-info">
-                <div>
+                <div class="contact-box">
                     ${msg("callCenter")}<br>
                     ${msg("supportEmail")}
                 </div>

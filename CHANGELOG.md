@@ -1,6 +1,23 @@
 # SuperAuthServer changelog!!
 All notable changes to this project will be documented in this file.
 
+<!-------------------- v2.0.0.1 start -------------------->
+
+## SuperAuthServer 2.0.0.1 (2021. 07. 09. (금) 13:14:38 KST)
+
+### Added
+
+### Changed
+  - [mod] keycloak jar 14.0.0 으로 업데이트 by dnxorjs1
+
+### Fixed
+
+### CRD yaml
+
+### Etc
+
+<!--------------------- v2.0.0.1 end --------------------->
+
 <!-------------------- v2.0.0.0 start -------------------->
 
 ## SuperAuthServer 2.0.0.0 (2021. 07. 07. (수) 15:42:07 KST)

@@ -1,6 +1,23 @@
 # SuperAuthServer changelog!!
 All notable changes to this project will be documented in this file.
 
+<!-------------------- v2.0.0.2 start -------------------->
+
+## SuperAuthServer 2.0.0.2 (2021. 07. 13. (화) 11:41:54 KST)
+
+### Added
+
+### Changed
+  - [mod] kafka 내부 publish KAFKA_INTERNAL_ADDR 환경변수 존재할경우 처리 되게 끔 처리 by dnxorjs1
+
+### Fixed
+
+### CRD yaml
+
+### Etc
+
+<!--------------------- v2.0.0.2 end --------------------->
+
 <!-------------------- v2.0.0.1 start -------------------->
 
 ## SuperAuthServer 2.0.0.1 (2021. 07. 09. (금) 13:14:38 KST)

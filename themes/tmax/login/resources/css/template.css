@@ -1402,14 +1402,6 @@ div.form-group .form-control.has-error::placeholder {
 } */
 
 @media (max-width: 499px) {
-  .form-group .remember-me {
-    display: inline-block;
-  }
-
-  .form-group .remember-email {
-    display: none;
-  }
-
   #verify_password #kc-info {
     margin-bottom: 50px;
   }

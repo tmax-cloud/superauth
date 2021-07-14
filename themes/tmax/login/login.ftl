@@ -33,21 +33,13 @@
                     <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
                         <div id="kc-form-options">
                             <#if realm.rememberMe && !usernameEditDisabled??>
-                                <div class="checkbox remember-me">
-                                    <#if login.rememberMe??>
-                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
-                                    <#else>
-                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox"> 
-                                    </#if>
-                                    <label for="rememberMe">${msg("rememberMe")}</label>
-                                </div>
                                 <div class="checkbox remember-email">
-                                    <#if login.rememberMe??>
-                                        <input tabindex="3" id="rememberEmail" name="rememberEmail" type="checkbox" checked> 
-                                    <#else>
-                                        <input tabindex="3" id="rememberEmail" name="rememberEmail" type="checkbox"> 
-                                    </#if>
-                                     <label for="rememberEmail">${msg("rememberEmail")}</label>
+                                    <input tabindex="3" id="rememberEmail" name="rememberEmail" type="checkbox" checked>
+                                    <label for="rememberEmail">${msg("rememberEmail")}</label>
+                                </div>
+                                <div class="checkbox remember-me">
+                                    <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
+                                    <label for="rememberMe">${msg("rememberMe")}</label>
                                 </div>
                             </#if>
                         </div>
@@ -84,14 +76,4 @@
     </#if>
     <script type="text/javascript" src="${url.resourcesPath}/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="${url.resourcesPath}/js/login.js"></script>
-    <script type="text/javascript">
-        if ($(window).width() < 500 ) {
-            $('input:checkbox[id="rememberMe"]').attr("checked", true);
-            $('input:checkbox[id="rememberEmail"]').attr("checked", false);
-        }
-        else { 
-            $('input:checkbox[id="rememberMe"]').attr("checked", false);
-            $('input:checkbox[id="rememberEmail"]').attr("checked", true);
-        }
-    </script>
 </@layout.registrationLayout>

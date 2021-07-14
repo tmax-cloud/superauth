@@ -165,7 +165,7 @@
 }
 
 .form-group .remember-me {
-  display: none;
+  display: inline-block;
 }
 
 .form-group .remember-email {

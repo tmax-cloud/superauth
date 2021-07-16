@@ -123,18 +123,18 @@
   color: #aeaeae;
 }
 
-#kc-forgot-pw > span > a {
-  font-family: "Noto Sans KR";
-  font-size: 14px;
-  font-weight: 500;
-  color: #185692;
-}
-
 .login-body #kc-registration > span > a {
   margin: 0;
   font-size: 16px;
   font-weight: 500;
   color: #185692;
+  letter-spacing: 0;
+}
+
+.login-body #kc-forgot-pw > span > a {
+  font-size: 16px;
+  color: #185692 ;
+  font-weight: 500;
   letter-spacing: 0;
 }
 
@@ -167,6 +167,21 @@
 
 .login-body .empty-error {
   height: 26px;
+}
+
+.login-body .kc-option-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+
+.login-body div.kc-border{
+  display: flex;
+  align-items: center;
+  color: #185692;
+  margin: 1px 16px 1px 9px;
 }
 
 @media (max-width: 499px) {

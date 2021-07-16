@@ -166,12 +166,12 @@
 
 .form-group .remember-me {
   display: inline-block;
-  margin-left: 15px;
 }
 
 .form-group .remember-email {
-  display: inline-block;
+  display: none;
 }
+
 
 /*
 Register - User Agreement
@@ -1403,6 +1403,10 @@ div.form-group .form-control.has-error::placeholder {
 } */
 
 @media (max-width: 499px) {
+  .form-group .remember-me {
+    display: none;
+  }
+
   #verify_password #kc-info {
     margin-bottom: 50px;
   }

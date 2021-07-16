@@ -33,21 +33,25 @@
                     <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
                         <div id="kc-form-options">
                             <#if realm.rememberMe && !usernameEditDisabled??>
+                                <div class="checkbox remember-me">
+                                    <#if login.rememberMe??>
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
+                                    <#else>
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
+                                    </#if>
+                                    <label for="rememberMe">${msg("rememberMe")}</label>
+                                </div>
                                 <div class="checkbox remember-email">
                                     <input tabindex="3" id="rememberEmail" name="rememberEmail" type="checkbox" checked>
                                     <label for="rememberEmail">${msg("rememberEmail")}</label>
                                 </div>
-                                <div class="checkbox remember-me">
-                                    <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
-                                    <label for="rememberMe">${msg("rememberMe")}</label>
-                                </div>
                             </#if>
                         </div>
-                        <div  id="kc-forgot-pw" class="${properties.kcFormOptionsWrapperClass!}">
-                                <#if realm.resetPasswordAllowed>
-                                    <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
-                                </#if>
-                        </div>
+<#--                        <div  id="kc-forgot-pw" class="${properties.kcFormOptionsWrapperClass!}">-->
+<#--                                <#if realm.resetPasswordAllowed>-->
+<#--                                    <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>-->
+<#--                                </#if>-->
+<#--                        </div>-->
                     </div>
                 </div>
                 <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
@@ -67,7 +71,15 @@
             </div>
         </#if>
       </div>
-    <#elseif section = "info" >
+<#--    <#elseif section = "info" >-->
+        <#if realm.resetPasswordAllowed>
+            <div  id="kc-forgot-pw" class="${properties.kcFormOptionsWrapperClass!}">
+                <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+            </div>
+        </#if>
+        <#if realm.resetPasswordAllowed && realm.registrationAllowed>
+            <div class="kc-border">|</div>
+        </#if>
         <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
             <div id="kc-registration" style="max-width: 380px;" >
                 <span><a tabindex="6" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
@@ -76,4 +88,7 @@
     </#if>
     <script type="text/javascript" src="${url.resourcesPath}/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="${url.resourcesPath}/js/login.js"></script>
+<#--    <script type="text/javascript">-->
+<#--        $('input:checkbox[id="rememberEmail"]').attr("checked", true);-->
+<#--    </script>-->
 </@layout.registrationLayout>

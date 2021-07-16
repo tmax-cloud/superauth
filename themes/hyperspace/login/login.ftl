@@ -36,26 +36,17 @@
                         <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
                             <div id="kc-form-options">
                                 <#if realm.rememberMe && !usernameEditDisabled??>
-                                   <div class="checkbox remember-me">
-                                        <#if login.rememberMe??>
-                                            <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
-                                        <#else>
-                                            <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox"> 
-                                        </#if>
+                                    <div class="checkbox remember-me">
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox">
                                         <label for="rememberMe">${msg("rememberMe")}</label>
                                     </div>
                                     <div class="checkbox remember-email">
-                                        <#if login.rememberMe??>
-                                            <input tabindex="3" id="rememberEmail" name="rememberEmail" type="checkbox" checked> 
-                                        <#else>
-                                            <input tabindex="3" id="rememberEmail" name="rememberEmail" type="checkbox"> 
-                                        </#if>
+                                        <input tabindex="3" id="rememberEmail" name="rememberEmail" type="checkbox" checked>
                                         <label for="rememberEmail">${msg("rememberEmail")}</label>
                                     </div>
                                 </#if>
                             </div>
                         </div>
-
                         <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
                             <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
                             <input tabindex="4" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="button" value="${msg("doLogIn")}" onclick="submitClick()" disabled/>
@@ -98,11 +89,9 @@
  <script type="text/javascript">
     if ($(window).width() < 500 ) {
         $('input:checkbox[id="rememberMe"]').attr("checked", true);
-        $('input:checkbox[id="rememberEmail"]').attr("checked", false);
     }
-    else { 
+    else {
         $('input:checkbox[id="rememberMe"]').attr("checked", false);
-        $('input:checkbox[id="rememberEmail"]').attr("checked", true);
     }
-</script>
+ </script>
 </@layout.registrationLayout>

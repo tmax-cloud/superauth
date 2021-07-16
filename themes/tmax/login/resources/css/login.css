@@ -37,10 +37,6 @@
     width: 92%;
     height: auto;
   }
-
-  .login-body #kc-registration {
-    margin: 5px 0 0;
-  }
 }
 
 @media (min-width: 769px) {
@@ -190,7 +186,7 @@
   display: flex;
   align-items: center;
   color: #185692;
-  margin: 0px 10px 0px 10px;
+  margin: 1px 10px 2px 10px;
 }
 
 @media (max-width: 499px) {
@@ -200,10 +196,6 @@
 
   .login-body #kc-content-wrapper #kc-page-title {
     font-size: 24px;
-  }
-
-  .login-body #kc-registration > span > a {
-    font-size: 14px;
   }
 
   .alert-error {

@@ -34,11 +34,7 @@
                         <div id="kc-form-options">
                             <#if realm.rememberMe && !usernameEditDisabled??>
                                 <div class="checkbox remember-me">
-                                    <#if login.rememberMe??>
-                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
-                                    <#else>
-                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked>
-                                    </#if>
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox">
                                     <label for="rememberMe">${msg("rememberMe")}</label>
                                 </div>
                                 <div class="checkbox remember-email">
@@ -47,11 +43,6 @@
                                 </div>
                             </#if>
                         </div>
-<#--                        <div  id="kc-forgot-pw" class="${properties.kcFormOptionsWrapperClass!}">-->
-<#--                                <#if realm.resetPasswordAllowed>-->
-<#--                                    <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>-->
-<#--                                </#if>-->
-<#--                        </div>-->
                     </div>
                 </div>
                 <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">

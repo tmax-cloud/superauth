@@ -53,8 +53,8 @@ public class KafkaProducer {
 
     public static Properties getProperties() {
         Properties properties = new Properties();
-        if(System.getenv("KAFKA_INTERNAL_ADDR")!= null){
-            BOOTSTRAP_SERVER = System.getenv("KAFKA_INTERNAL_ADDR");
+        if(System.getenv("KAFKA_BROKERS_ADDR")!= null){
+            BOOTSTRAP_SERVER = System.getenv("KAFKA_BROKERS_ADDR");
         }
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER);
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());

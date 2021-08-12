@@ -29,6 +29,7 @@ COPY themes/hypercloud/login /opt/jboss/keycloak/themes/hypercloud/login
 COPY themes/hyperspace/login /opt/jboss/keycloak/themes/hyperspace/login
 COPY themes/superauth /opt/jboss/keycloak/themes/superauth
 COPY themes/cnu /opt/jboss/keycloak/themes/CNU
+COPY themes/woo /opt/jboss/keycloak/themes/woo
 
 # 4. keycloak service jar & sql jar & server-spi-private jar change for tibero, this contains sql error fixme!!
 #RUN rm /opt/jboss/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-services/main/keycloak-services-11.0.2.jar

@@ -19,6 +19,7 @@ node {
 		sh "git config --global user.name ${githubUserName}"
 		sh "git config --global user.email ${userEmail}"
 		sh "git config --global credential.helper store"
+		sh "git remote set-url origin https://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@github.com/tmax-cloud/superauth.git"
     
     	sh "git fetch --all"
 		sh "git reset --hard origin/${params.buildBranch}"
@@ -63,6 +64,7 @@ node {
             sh "git config --global user.name ${githubUserName}"
             sh "git config --global user.email ${userEmail}"
             sh "git config --global credential.helper store"
+            sh "git remote set-url origin https://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@github.com/tmax-cloud/superauth.git"
             sh "git add -A"
 
             sh (script:'git commit -m "[Distribution] Super Auth Server- ${version} " || true')

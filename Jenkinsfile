@@ -7,7 +7,7 @@ node {
 	def preVersion = "${params.preVersion}"
 	def imageTag = "b${version}"
 	def globalVersion = "SuperAuth-server:b${version}"
-	def githubUserName = "dnxorjs1"
+	def githubUserName = "ck-jenkins"
 	def userEmail = "taegeon_woo@tmax.co.kr"
 
     stage('git pull from superauth') {
@@ -16,7 +16,6 @@ node {
         url: "http://${gitSuperAuthAddress}"
 
     	sh "git checkout ${params.buildBranch}"
-		sh "git remote set-url origin https://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@github.com/tmax-cloud/superauth.git"
     	sh "git fetch --all"
 		sh "git reset --hard origin/${params.buildBranch}"
 		sh "git pull origin ${params.buildBranch}"
@@ -56,7 +55,6 @@ node {
 
         stage('git push'){
             sh "git checkout ${params.buildBranch}"
-            sh "git remote set-url origin https://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@github.com/tmax-cloud/superauth.git"
             sh "git add -A"
 
             sh (script:'git commit -m "[Distribution] Super Auth Server- ${version} " || true')

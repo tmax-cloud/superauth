@@ -8,6 +8,7 @@ node {
 	def imageTag = "b${version}"
 	def globalVersion = "SuperAuth-server:b${version}"
 	def githubUserName = "ck-jenkins"
+	def githubUserToken = "${params.githubUserToken}"
 	def userEmail = "taegeon_woo@tmax.co.kr"
 
     stage('git pull from superauth') {
@@ -62,11 +63,11 @@ node {
             sh (script:'git commit -m "[Distribution] Super Auth Server- ${version} " || true')
             sh "git tag v${version}"
 
-            withCredentials([gitUsernamePassword(credentialsId: '${githubUserName}',
-                                     gitToolName: 'git-tool')]) {
-                sh "sudo git push -u origin +${params.buildBranch}"
-                sh "sudo git push origin v${version}"
-            }
+            sh "git remote set-url origin https://${githubUserToken}@github.com/tmax-cloud/hyperauth.git"
+
+            sh "sudo git push -u origin +${params.buildBranch}"
+            sh "sudo git push origin v${version}"
+
 
             sh "git fetch --all"
             sh "git reset --hard origin/${params.buildBranch}"

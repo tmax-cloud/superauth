@@ -63,7 +63,7 @@ node {
             sh (script:'git commit -m "[Distribution] Super Auth Server- ${version} " || true')
             sh "git tag v${version}"
 
-            sh "git remote set-url origin https://${githubUserToken}@github.com/tmax-cloud/hyperauth.git"
+            sh "git remote set-url origin https://${githubUserToken}@github.com/tmax-cloud/superauth.git"
 
             sh "sudo git push -u origin +${params.buildBranch}"
             sh "sudo git push origin v${version}"

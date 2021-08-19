@@ -15,10 +15,12 @@ node {
         credentialsId: '${githubUserName}',
         url: "http://${gitSuperAuthAddress}"
 
-    	sh "git checkout ${params.buildBranch}"
-    	sh "git fetch --all"
-		sh "git reset --hard origin/${params.buildBranch}"
-		sh "git pull origin ${params.buildBranch}"
+        sh "git checkout ${params.buildBranch}"
+        sh "git fetch --all"
+        sh "git reset --hard origin/${params.buildBranch}"
+        sh "git pull origin ${params.buildBranch}"
+
+
     }
     
     stage('Maven build SuperAuth SPI & git push') {
@@ -60,8 +62,11 @@ node {
             sh (script:'git commit -m "[Distribution] Super Auth Server- ${version} " || true')
             sh "git tag v${version}"
 
-            sh "sudo git push -u origin +${params.buildBranch}"
-            sh "sudo git push origin v${version}"
+            withCredentials([gitUsernamePassword(credentialsId: '${githubUserName}',
+                                     gitToolName: 'git-tool')]) {
+                sh "sudo git push -u origin +${params.buildBranch}"
+                sh "sudo git push origin v${version}"
+            }
 
             sh "git fetch --all"
             sh "git reset --hard origin/${params.buildBranch}"
